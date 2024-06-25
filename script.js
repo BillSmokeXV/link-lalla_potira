@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const body = document.body;
     const lightList = document.getElementById('lightList');
     const darkList = document.getElementById('darkList');
-    const profileImage = document.getElementById('profileImage')
+    const profileImage = document.getElementById('profileImage');
 
     // Define os modos inicial
     let isDarkMode = false;
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             toggleButton.textContent = 'Minhas Redes ✅';
             lightList.style.display = 'none';
             darkList.style.display = 'block';
-            profileImage.src = './assets/avatar.dark.png' // Muda a imagem de perfil para o modo escuro
+            profileImage.src = './assets/avatar.dark.png'; // Muda a imagem de perfil para o modo escuro
         } else {
             body.classList.add('light-mode');
             body.classList.remove('dark-mode');
@@ -32,8 +32,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    // Adiciona um ouvinte de evento para o botão
+    // Função para confirmar idade específica para os elementos que contêm "🔞"
+    function confirmarIdade(event) {
+        const targetElement = event.target;
+        if (targetElement.textContent.includes('🔞')) {
+            const confirmacao = confirm('Este conteúdo é para maiores de 18 anos. Confirma que você tem mais de 18 anos?');
+            if (!confirmacao) {
+                event.preventDefault(); // Cancela o evento de clique se não confirmado
+            }
+        }
+    }
+
+    // Adiciona um ouvinte de evento para o botão de alternar modo
     toggleButton.addEventListener('click', toggleMode);
+
+    // Adiciona um ouvinte de evento para cada link na lista de modos claro
+    lightList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', confirmarIdade);
+    });
+
+    // Adiciona um ouvinte de evento para cada link na lista de modos escuro
+    darkList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', confirmarIdade);
+    });
 
     // Define o modo inicial (claro)
     body.classList.add('light-mode');
@@ -42,5 +63,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
     lightList.style.display = 'block';
     darkList.style.display = 'none';
 });
-
-
