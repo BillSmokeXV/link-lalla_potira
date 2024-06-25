@@ -25,6 +25,7 @@
 body {
     
     background: var(--bg-url) no-repeat top center/cover;
+    background-size: cover; /* Garante que a imagem de fundo ocupe toda a tela */
     height: 100vh;
 }
 
