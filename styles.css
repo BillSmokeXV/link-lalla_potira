@@ -48,10 +48,12 @@ body * {
 #profile {
     text-align: center;
     padding: 24px;
+    animation: Artebill 4s;
   }
   
 #profile img {
     width: 180px;
+    animation: Artebill 4s;
   }
   
 #profile p {
@@ -59,6 +61,7 @@ body * {
     line-height: 24px;
     margin-top: 8px;
     margin-right: 8p;
+    animation: Artebill 4s;
   }
 
 button {
@@ -68,6 +71,7 @@ button {
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
+    animation: Artebill 4s;
 }
 
 button.light-mode {
@@ -98,6 +102,18 @@ button.dark-mode {
 .dark-mode .mode-list.dark-mode {
     display: block;
 }
+section div
+{
+     transition: transform .3s;
+     background-color: #2A2634;
+     padding: 40px;
+     padding-top: 24px;
+     border-radius: 8px;
+}
+section div li:hover
+{
+     transform: scale(1.1);
+}
 
   ul {
     list-style: none;
@@ -107,6 +123,7 @@ button.dark-mode {
     gap: 16px;
   
     padding: 24px 0;
+    animation: Artebill 4s;
   }
 
   ul li a {
@@ -127,6 +144,7 @@ button.dark-mode {
     font-weight: 500;
   
     transition: background 0.2s;
+    animation: Artebill 4s;
   }
   /* pseudo-selector*/
   ul li a:hover {
@@ -139,6 +157,7 @@ button.dark-mode {
     justify-content: center;
     padding: 24px 0;
     font-size: 15px;
+    animation: Artebill 4s;
   }
   
   #social-links a {
@@ -146,6 +165,7 @@ button.dark-mode {
     align-items: center;
     justify-content: center;
     padding: 16px;
+    animation: Artebill 4s;
   }
   
 
@@ -171,6 +191,7 @@ footer {
     padding: 24px 0;
     text-align: center;
     font-size: 14px;
+    animation: Artebill 4s;
   }
   
   @media (max-width: 600px) {
@@ -180,5 +201,67 @@ footer {
     
     #profile img {
         width: 150px;
+    }
+}
+
+header div 
+{
+    animation: fromTop .7s .4s backwards;  
+}
+
+header div img
+{
+     background-position: center;
+}
+
+header div:hover 
+{
+    transform: scale(1.1);
+ }
+
+main section {
+   
+    animation: Artebill 1.5s backwards 
+}
+
+main section:nth-child(1) {
+
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    
+    animation-delay: .3s;
+}
+
+main section:nth-child(3) {
+    
+    animation-delay: .6s;
+}
+
+@keyframes fromTop 
+{
+    
+     from {
+
+        transform: translateX(-30px);
+    }
+
+     to {
+
+        transform: translateX(0);
+    }
+}
+
+ @keyframes Artebill 
+{
+     from {
+
+        transform: translateX(30px);
+    }
+
+     to {
+
+        transform: translateX(0);
     }
 }
