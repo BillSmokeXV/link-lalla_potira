@@ -172,3 +172,13 @@ footer {
     text-align: center;
     font-size: 14px;
   }
+  
+  @media (max-width: 600px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    #profile img {
+        width: 150px;
+    }
+}
