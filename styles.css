@@ -191,6 +191,8 @@ footer {
     padding: 1px 0;
     text-align: center;
     font-size: 14px;
+    border-top: 1px solid var(--stroke-color); /* Adiciona uma borda superior */
+    border-bottom: 1px solid var(--stroke-color); /* Adiciona uma borda inferior */
     animation: Artebill 4s;
   }
   
