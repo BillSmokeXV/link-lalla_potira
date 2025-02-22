@@ -167,6 +167,28 @@ li {
   animation: pulse 1.5s infinite ease-in-out;
 }
 
+footer {
+  padding: 1px 0;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid var(--stroke-color);
+  border-bottom: 1px solid var(--stroke-color);
+  animation: Artebill 4s;
+  background-color: var(--surface-color); /* Define o fundo do footer */
+  color: var(--text-color); /* Garante que o texto tenha a cor definida pelo modo */
+}
+
+.light-mode footer {
+  background-color: var(--surface-color); /* Fundo para o modo claro */
+  color: var(--text-color); /* Cor do texto para o modo claro */
+}
+
+.dark-mode footer {
+  background-color: var(--surface-color); /* Fundo para o modo escuro */
+  color: var(--text-color); /* Cor do texto para o modo escuro */
+}
+
+
 /* Responsividade */
 @media (max-width: 600px) {
   #qr-code img {
