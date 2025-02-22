@@ -202,8 +202,8 @@ section div li:hover
 #qr-code img {
   width: 120px;  /* Ajuste o valor conforme necessário */
   height: auto;  /* Mantém a proporção da imagem */
-  animation: pulse 1.5s infinite ease-in-out;
   border-radius: 20%;
+  animation: pulse 1.5s infinite ease-in-out;
 }
 
 #qr-code {
@@ -221,6 +221,10 @@ footer {
   }
   
   @media (max-width: 600px) {
+    #qr-code img {
+      width: 120px;
+      border-radius: 20%;
+    }
     body {
       background-size: cover;
       background-position: center center;
