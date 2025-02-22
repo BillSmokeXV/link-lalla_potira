@@ -187,6 +187,27 @@ section div li:hover
     display: block;
 }
 
+#qr-code {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.light-mode #qr-code, 
+.dark-mode #qr-code {
+  display: block;
+}
+
+#qr-code img {
+  width: 180px;  /* Ajuste o valor conforme necessário */
+  height: auto;  /* Mantém a proporção da imagem */
+}
+
+#qr-code {
+  margin-bottom: 20px; /* Ajuste o valor conforme necessário */
+  text-align: center;
+}
+
 footer {
     padding: 1px 0;
     text-align: center;
