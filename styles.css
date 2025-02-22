@@ -1,3 +1,4 @@
+/* Reset e variáveis globais */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +7,7 @@
 
 :root {
   --text-color: white;
-  --bg-url: url(./assets/desktop-dark-3.jpg);
+  --bg-url: url(./assets/desktop-dark-3.jpg); /* Imagem para o modo escuro */
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -15,7 +16,7 @@
 
 .light-mode {
   --text-color: black;
-  --bg-url: url(./assets/light-teste.jpg);
+  --bg-url: url(./assets/light-teste.jpg); /* Imagem para o modo claro */
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
@@ -24,25 +25,27 @@
 
 body {
   background: var(--bg-url) no-repeat center center/cover;
+  background-size: cover;
   height: 100vh;
   margin: 0;
+  padding: 0;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
 body * {
   margin: 0;
   font-family: "Inter", sans-serif;
-  transition: background-color 0.5s, color 0.5s;
   color: var(--text-color);
 }
 
+/* Contêiner principal */
 .container {
   text-align: center;
-  margin-top: 50px;
   width: 100%;
   max-width: 588px;
   margin: 56px auto 0px;
   padding: 0 24px;
-  min-height: calc(100vh - 56px);
+  min-height: 100vh;
 }
 
 #profile {
@@ -53,6 +56,7 @@ body * {
 
 #profile img {
   width: 180px;
+  transition: opacity 0.3s ease;
   animation: Artebill 4s;
 }
 
@@ -64,6 +68,7 @@ body * {
   animation: Artebill 4s;
 }
 
+/* Botões */
 button {
   padding: 10px 20px;
   font-size: 16px;
@@ -84,15 +89,15 @@ button.dark-mode {
   color: #000;
 }
 
+/* Modificação na lista de modos */
 .mode-list {
   list-style-type: none;
   padding: 0;
   display: none;
-  margin: 20px 0;
 }
 
 .mode-list li {
-  margin: 5px 0;
+  margin: 16px;
 }
 
 .light-mode .mode-list.light-mode {
@@ -103,18 +108,7 @@ button.dark-mode {
   display: block;
 }
 
-section div {
-   transition: transform .3s;
-   background-color: #2A2634;
-   padding: 40px;
-   padding-top: 24px;
-   border-radius: 8px;
-}
-
-section div li:hover {
-   transform: scale(1.1);
-}
-
+/* Listas de links */
 ul {
   list-style: none;
   display: flex;
@@ -136,78 +130,36 @@ ul li a {
   -webkit-backdrop-filter: blur(4px);
   text-decoration: none;
   font-weight: 500;
-  transition: background 0.2s, border-color 0.2s, color 0.2s; /* Transição para cor de texto e fundo */
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
   animation: Artebill 4s;
 }
 
-/* Aqui começa a modificação */
+/* Modificação para ícones */
 ul li a i {
-  margin-right: 20px; /* Aumenta o espaço entre o ícone e o texto */
+  margin-right: 20px;
   font-size: 20px;
   color: var(--text-color);
   transition: color 0.3s;
 }
-/* Fim da modificação */
 
-/* Mudando a cor de fundo e o ícone quando passar o mouse */
+/* Efeito de hover */
 ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
 }
 
 ul li a:hover i {
-  color: #ff6347; /* Cor do ícone no hover */
+  color: #ff6347;
 }
 
 ul li a:hover {
-  color: #ff6347; /* Mudando a cor do texto no hover */
+  color: #ff6347;
 }
 
-#social-links {
-  display: block;
-  justify-content: center;
-  padding: 24px 0;
-  font-size: 15px;
-  animation: Artebill 4s;
+li {
+  list-style: none;
 }
-
-#social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  animation: Artebill 4s;
-}
-
-.mode-list {
-  list-style-type: none;
-  padding: 0;
-  display: none;
-}
-
-.mode-list li {
-  margin: 16px;
-}
-
-.light-mode .mode-list.light-mode {
-  display: block;
-}
-
-.dark-mode .mode-list.dark-mode {
-  display: block;
-}
-
-#qr-code {
-  display: block;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.light-mode #qr-code, 
-.dark-mode #qr-code {
-  display: block;
-}
-
+/* QR Code */
 #qr-code img {
   width: 120px;
   height: auto;
@@ -215,20 +167,7 @@ ul li a:hover {
   animation: pulse 1.5s infinite ease-in-out;
 }
 
-#qr-code {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-footer {
-  padding: 1px 0;
-  text-align: center;
-  font-size: 14px;
-  border-top: 1px solid var(--stroke-color);
-  border-bottom: 1px solid var(--stroke-color);
-  animation: Artebill 4s;
-}
-
+/* Responsividade */
 @media (max-width: 600px) {
   #qr-code img {
     width: 120px;
@@ -248,43 +187,16 @@ footer {
   }
 }
 
-header div {
-  animation: fromTop .7s .4s backwards;
+footer {
+  padding: 1px 0;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid var(--stroke-color);
+  border-bottom: 1px solid var(--stroke-color);
+  animation: Artebill 4s;
 }
 
-header div img {
-  background-position: center;
-}
-
-header div:hover {
-  transform: scale(1.1);
-}
-
-main section {
-  animation: Artebill 1.5s backwards;
-}
-
-main section:nth-child(1) {
-  animation-delay: 0;
-}
-
-main section:nth-child(2) {
-  animation-delay: .3s;
-}
-
-main section:nth-child(3) {
-  animation-delay: .6s;
-}
-
-@keyframes fromTop {
-  from {
-    transform: translateX(-30px);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
+/* Animações */
 @keyframes Artebill {
   from {
     transform: translateX(30px);
