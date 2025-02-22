@@ -24,9 +24,9 @@
 
 body {
     
-    background: var(--bg-url) no-repeat top center/cover;
-    background-size: cover; /* Garante que a imagem de fundo ocupe toda a tela */
+    background: var(--bg-url) no-repeat center center/cover;
     height: 100vh;
+    margin: 0;
 }
 
 body * {
@@ -43,6 +43,7 @@ body * {
     max-width: 588px;
     margin: 56px auto 0px;
     padding: 0 24px;
+    min-height: calc(100vh - 56px); /* Ajusta a altura para preencher a tela, sem ultrapassar o espaço do conteúdo */
 }
 
 #profile {
@@ -199,7 +200,7 @@ section div li:hover
 }
 
 #qr-code img {
-  width: 180px;  /* Ajuste o valor conforme necessário */
+  width: 120px;  /* Ajuste o valor conforme necessário */
   height: auto;  /* Mantém a proporção da imagem */
 }
 
@@ -218,6 +219,11 @@ footer {
   }
   
   @media (max-width: 600px) {
+    body {
+      background-size: cover;
+      background-position: center center;
+    }
+
     .container {
         padding: 0 12px;
     }
