@@ -203,6 +203,7 @@ section div li:hover
   width: 120px;  /* Ajuste o valor conforme necessário */
   height: auto;  /* Mantém a proporção da imagem */
   animation: pulse 1.5s infinite ease-in-out;
+  border-radius: 20%;
 }
 
 #qr-code {
