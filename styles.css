@@ -202,6 +202,7 @@ section div li:hover
 #qr-code img {
   width: 120px;  /* Ajuste o valor conforme necessário */
   height: auto;  /* Mantém a proporção da imagem */
+  animation: pulse 1.5s infinite ease-in-out;
 }
 
 #qr-code {
@@ -293,4 +294,16 @@ main section:nth-child(3) {
 
         transform: translateX(0);
     }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
