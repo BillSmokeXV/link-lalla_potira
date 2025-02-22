@@ -46,5 +46,5 @@ Esse projeto está sob a licença MIT.
 
 Feito com ♥ by Bill Smoke 
  
-[Participe do nosso canal!](https://t.me/lallapotiragratuito
+[Participe do nosso canal!](https://t.me/lallapotirafree
 )
