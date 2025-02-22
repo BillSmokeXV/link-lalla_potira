@@ -81,13 +81,13 @@ button {
 }
 
 button.light-mode {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
 }
 
 button.dark-mode {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 button:hover {
